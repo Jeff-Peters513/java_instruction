@@ -5,6 +5,8 @@ public class GradeConverterApp {
 	public static void main(String[] args) {
 		// welcome
 		System.out.println("Welcome");
+		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		String choice = "y";
 		
