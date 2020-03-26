@@ -7,7 +7,7 @@ public class TestApp {
 		System.out.println("Success!!");
 		System.out.println("Success!!!");
 		System.out.println("This is some fun coding!!");
-		// single line comminet
+		// single line comment
 		
 		/* block comment
 		 * 

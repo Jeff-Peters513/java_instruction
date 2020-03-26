@@ -13,7 +13,7 @@ public class TravelTimeCalculator {
 		
 		
 			//2. prompt for user input
-			System.out.print("Enter mile: ");
+			System.out.print("Enter miles traveled: ");
 			double mile = sc.nextDouble();
 			
 			System.out.print("Enter miles per hour: ");
@@ -23,21 +23,22 @@ public class TravelTimeCalculator {
 			double minutesTraveled = (mile/mph)*60;
 			int timeTraveledHours = (int)(minutesTraveled/60);
 			int remainingMinutes = (int)(minutesTraveled%60);
-		
+					
 			//4. display output	
-			System.out.println("hours: "+ timeTraveledHours);
-			System.out.println("minutes: "+ remainingMinutes);
-
 			System.out.println("Estimated travel time");
 			System.out.println("----------------------");
 			System.out.println();
-			System.out.println("Continue? (y/n)");
+			System.out.println("Hours: "+ timeTraveledHours);
+			System.out.println("Minutes: "+ remainingMinutes);
+			System.out.println();			
+			System.out.print("Continue? (y/n)");
 			choice = sc.next();
 			
 		}
 			//--end loop
 			//5. Bye
 		System.out.println("Bye");
+		sc.close();
 	}
 	
 	}
