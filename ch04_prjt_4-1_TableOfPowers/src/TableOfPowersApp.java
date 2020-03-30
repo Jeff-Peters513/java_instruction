@@ -10,10 +10,10 @@ public class TableOfPowersApp {
 
 		// --Start loop
 		String choice = "y";
+		Scanner sc = new Scanner(System.in);
 		while (choice.equalsIgnoreCase("y")) {
 
 			// 2. prompt for user input
-			Scanner sc = new Scanner(System.in);
 			System.out.print("Enter an integer: ");
 			int n = sc.nextInt();
 			System.out.println();
@@ -41,6 +41,6 @@ public class TableOfPowersApp {
 
 		// 5. Bye
 		System.out.println("Bye");
-
+		sc.close();
 	}
 }
