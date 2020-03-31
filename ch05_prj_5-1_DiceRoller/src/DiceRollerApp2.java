@@ -1,37 +1,45 @@
 import java.util.Scanner;
 
 public class DiceRollerApp2 {
-
-	
-		// Welcome statement
-	private static void displayWelcome(int limit) {
-		        System.out.println("Dice Roller");
-		        System.out.println();
-		        System.out.println("Roll the dice? (y/n) ");
-		    }
+			
 		public static void main(String[] args) {	
-		
-		// promt user
+		// Welcome statement
+		displayWelcome();
+		final int SIDES1 = 6;
+		final int SIDES2 = 6;
+				
+		// prompt user
 		Scanner sc = new Scanner(System.in);
 		String choice = "y";
-		count = 1;
+		int i = 1;
 		while (choice.equalsIgnoreCase("y")) {
 			// get the input from the user
-			
-			if (count = 1) {choice = askToRoll(sc);}
-			else {choice = askToContinue(sc);}	
-			count++;} 
+			if (i <= 1) {choice = askToRoll(sc);
+			 i++;}
+			 else if (i > 1) {choice = askToContinue(sc);
+			 i++;}
 		
-		// business logic
-		
+		// business logic - call getRandomInt to get two dice #'s
+		    int die1 = getRandomInt(SIDES1);
+			int die2 = getRandomInt2(SIDES2);
 		
 		
 		// display results etc..
+		    System.out.println(die1);
+			System.out.println(die2);
+		}
 		// Bye	
 		System.out.println("Bye");
-	}	
+		}	
+	
+
+	private static void displayWelcome() {
+		    System.out.println("Dice Roller");
+		    System.out.println();
+		    }	
+		
 	public static String askToRoll(Scanner sc) {
-		System.out.print("Roll Again? (y/n): ");
+		System.out.print("Roll the Dice? (y/n): ");
 		String choice = sc.next();
 		return choice;
 	     }
@@ -40,6 +48,25 @@ public class DiceRollerApp2 {
 			String choice = sc.next();
 			return choice;
 			}
-	
+	public static int getRandomInt(int SIDES1) {
+        double d = Math.random() * SIDES1;   // d is >= 0.0 and < limit
+        int randomInt = (int) d;            // convert double to int
+        randomInt++;                        // int is >= 1 and <= limit
+        return randomInt;
+    }	
+	public static int getRandomInt2(int SIDES2) {
+        double d = Math.random() * SIDES2;   // d is >= 0.0 and < limit
+        int randomInt = (int) d;            // convert double to int
+        randomInt++;                        // int is >= 1 and <= limit
+        return randomInt;
+    }
 
-}
+	private static void displayResults(int die1, int die2, ) {
+	    System.out.println("Dice Roller");
+	    System.out.println();
+	    }	
+
+
+
+
+
