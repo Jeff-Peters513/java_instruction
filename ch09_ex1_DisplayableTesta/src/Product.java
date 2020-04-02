@@ -1,6 +1,6 @@
 import java.text.NumberFormat;
 
-public class Product implements Displayable {
+public class Product implements Displayable{
 
     private String code;
     private String description;
@@ -48,9 +48,12 @@ public class Product implements Displayable {
     }
 
 	@Override
-	public String getDisplayText() {
+	public String toString() {
 		// TODO Auto-generated method stub
 		return description;
 	}
-
+    
+    
+    
+    
 }

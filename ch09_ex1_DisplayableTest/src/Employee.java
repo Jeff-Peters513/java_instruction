@@ -1,4 +1,4 @@
-public class Employee implements Displayable, DepartmentConstants {
+public class Employee implements DepartmentConstants, Displayable {
 
     private int department;
     private String firstName;
@@ -11,15 +11,8 @@ public class Employee implements Displayable, DepartmentConstants {
     }
 
 	@Override
-	public String toString() {
-		String dept = "Unknown";
-		if (department == ADMIN) {
-			dept = "Administration";
-		}else if (department == EDITORIAL) {
-			dept = "Editorial";
-		}else if (department == MARKETING) {
-			dept = "Marketing";
-		}
-	return firstName +" "+ lastName +" ("+ dept +")";
+	public String getDisplayText() {
+		
+		return firstName + lastName + "(" + department+ ")";
 	}
 }
