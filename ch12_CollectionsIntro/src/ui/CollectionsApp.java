@@ -27,11 +27,14 @@ public class CollectionsApp {
 	numbersList.add(22);
 	numbersList.add(3);
 	numbersList.add(0,1);
+	int big = numbersList.size();
 	for (int number: numbersArray) {
 		System.out.println(number);
+		
 	}
 	System.out.println(numbersList);
-	
+	System.out.println("The Size of ArrayList is: "+big);
+	System.out.println("===================================");
 	ArrayList<String> names = new ArrayList<>();
 	names.add("Sean");
 	names.add("Trevor");
