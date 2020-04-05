@@ -21,17 +21,40 @@ public class PrimeNumberCheckerApp {
 			String promptU = "Please enter an integer between 1 and 5000: ";
 			n = Console.getInt(promptU, 0, 5001);
 
-			// business logic use CheckPrime method found online
+			// business logic use online code to find factors
+			ArrayList<Integer> factors = new ArrayList<Integer>();
+			// Skip two if the number is odd
+			int incrementer = n % 2 == 0 ? 1 : 2;
+
+			for (int i = 1; i <= Math.sqrt(n); i += incrementer) {
+
+				// If there is no remainder, then the number is a factor.
+				if (n % i == 0) {
+					factors.add(i);
+
+					// Skip duplicates
+					if (i != n / i) {
+						factors.add(n / i);
+					}
+
+				}
+			}
+
+			// number of factors
+			// Sort the list of factors
+			int big = factors.size();
+			Collections.sort(factors);
+
 			String msgP = n + " is a prime number.\n";
 			String msgNotP = n + " is NOT a prime number.";
+			// business logic use CheckPrime method found online
 			if (CheckPrime(n)) {
 				System.out.println(msgP);
 			} else {
 				System.out.println(msgNotP);
-				System.out.println("It has" + " factors: " + findFactors(n)+"\n");
+				System.out.println("It has " + big + " factors: " + factors + "\n");
 			}
-			
-		
+
 			// business logic part 2 - find and store factors for nonPrime #s
 
 			// ask user to continue?
@@ -41,7 +64,8 @@ public class PrimeNumberCheckerApp {
 		}
 		// bye
 		System.out.println("Bye");
-	} // end loop
+	}
+	// end loop
 
 	public static boolean CheckPrime(int numberToCheck) {
 		int remainder;
@@ -55,32 +79,6 @@ public class PrimeNumberCheckerApp {
 		}
 		return true;
 
-	}
-
-	public static ArrayList<Integer> findFactors(int num) {
-		ArrayList<Integer> factors = new ArrayList<Integer>();
-
-		// Skip two if the number is odd
-		int incrementer = num % 2 == 0 ? 1 : 2;
-
-		for (int i = 1; i <= Math.sqrt(num); i += incrementer) {
-
-			// If there is no remainder, then the number is a factor.
-			if (num % i == 0) {
-				factors.add(i);
-
-				// Skip duplicates
-				if (i != num / i) {
-					factors.add(num / i);
-				}
-
-			}
-		}
-
-		// Sort the list of factors
-		Collections.sort(factors);
-
-		return factors;
 	}
 
 }
