@@ -24,7 +24,14 @@ public class PrimeNumberCheckerApp {
 			// business logic use online code to find factors
 			ArrayList<Integer> factors = new ArrayList<Integer>();
 			// Skip two if the number is odd
-			int incrementer = n % 2 == 0 ? 1 : 2;
+			//int incrementer = n % 2 == 0 ? 1 : 2;
+			int incrementer = 0;
+			if (n % 2 == 0) {
+				incrementer = 1;
+			}
+			else {
+				incrementer = 2;
+			}
 
 			for (int i = 1; i <= Math.sqrt(n); i += incrementer) {
 
