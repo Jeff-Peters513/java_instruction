@@ -1,79 +1,113 @@
 package ui;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
 
 import util.Console;
 
 public class WizardInventoryApp {
+	// initialize an arrayList
+	private static List<String> inventory = new ArrayList<>();
 
 	public static void main(String[] args) {
 		// welcome
 		System.out.println("The Wizard Inventory Game!\n");
+		
+		//add the first 3 items into inventory
+		inventory.add("wooden shoes");
+		inventory.add("wizard hat");
+		inventory.add("cloth shoes");
+		
+		String command = "";
+		// Start loop
+		while (!command.equalsIgnoreCase("exit")) {
+			// display menu
+			displayMenu();
 
-		// prompt user for initial input
-		String menu = "COMMAND MENU\n" + "show - Show all items\n" + "grab - Grab an item\n" + "edit - Edit an item\n"
-				+ "drop - Drop an item\n" + "exit - Exit program\n";
-		System.out.println(menu);
+			// prompt and collect user input
+			command = Console.getString("Command: ", true);
 
-		// initialize an arrayList
-		ArrayList<String> inventory = new ArrayList<>(4);
-		inventory.add(0, "wooden staff");
-		inventory.add(1, "wizard hat");
-		inventory.add(2, "cloth shoes");
-		// inventory.add(3, "");
-
-		Scanner sc = new Scanner(System.in);
-		System.out.print("\nCommand: ");
-		String request = sc.next();
-		while (request.equalsIgnoreCase("show") || request.equalsIgnoreCase("grab") || request.equalsIgnoreCase("edit")
-				|| request.equalsIgnoreCase("drop")) {
-
-			switch (request) {
+			// business logic - going have to display in loop
+			switch (command) {
 			case "show":
-				// System.out.println(inventory.toArray());
 				// show current inventory
-				for (String s : inventory) {
-					System.out.println(s);
-				}
-
+				showItems();
 				break;
 			case "grab":
-				// add to current inventory add(index, object)
-				System.out.println("Name: ");
-				String pickUp = sc.next();
-				inventory.add(pickUp);
+				// add to current inventory add
+				addItem();
 				break;
 			case "edit":
 				// edit name of current inventory item
-				System.out.println("Number: ");
-				int itemNum = sc.nextInt();
-				inventory.get(itemNum);
-				System.out.println("Item number "+ itemNum +" was updated.\n");	
+				editItem();
 				break;
 			case "drop":
-				// drop an item from inventory - replace it with a blank? remove(object)
-				// remove()
-				System.out.println("Number: ");
-				int drop = sc.nextInt();
-				inventory.remove(drop);
+				// drop an item from inventory remove(object)
+				dropItem();
 				break;
 			case "exit":
 				// exit and end game
 				break;
-
+			default:
+				System.out.println("Invalid entry. Try Again.");
+				break;
 			}
-
-			// prompt to continue/
-			sc.nextLine();
-			System.out.println("\nCommand: ");
-			request = sc.next();
-			
-		
-			
-
+			System.out.println();
+			// end loop
 		}
 		// Bye
 		System.out.println("\nBye!");
+
+	} // end static main
+
+	private static void dropItem() {
+		//delete item from inventory
+		int itemNumber = uit.Console.getInt("Number: ", 0, inventory.size()+1);
+		String droppedItem = inventory.remove(itemNumber-1);
+		System.out.println( droppedItem +" was dropped.");
 	}
+
+	private static void editItem() {
+		// edit / update/ change name of item
+		int itemNumber = uit.Console.getInt("Number: ", 0, inventory.size()+1);
+		String updatedName = Console.getString("Updated Name: ", true);
+		inventory.remove(itemNumber-1);
+		inventory.add(itemNumber-1, updatedName);
+		System.out.println("Item number "+itemNumber+" was updated.");
+	}
+
+	private static void addItem() {
+		// add items per user to inventory
+		// max inventory is 4 items
+		if (inventory.size() >= 4) {
+			System.out.println("Cannot gran an item. Max limit (4) reached.");
+		}
+		else {
+			String itemName = Console.getString("Name: ", true);
+			inventory.add(itemName);
+			System.out.println(itemName+" was added.");			
+		}
+	}
+
+	private static void showItems() {
+		// display inventory of items
+		for (int i = 0; i < inventory.size(); i++) {
+			// inventory position will be 1 more than array index number
+			int itemNbr = i + 1;
+			System.out.println(itemNbr + ". " + inventory.get(i));
+		}
+	}
+
+	private static void displayMenu() {
+		StringBuilder menu = new StringBuilder("COMMAND MENU\n");
+		menu.append("show - Show all Items\n");
+		menu.append("grab - Grab (Add) an Item\n");
+		menu.append("edit - Edit an Item\n");
+		menu.append("drop - Drop (Delete) an Item\n");
+		menu.append("Exit - Exit program\n");
+		System.out.println(menu);
+	}
+
 }
