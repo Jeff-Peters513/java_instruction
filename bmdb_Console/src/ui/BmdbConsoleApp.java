@@ -4,11 +4,12 @@ import java.util.List;
 
 import business.Movie;
 import db.DAO;
-import db.MovieList;
+//import db.MovieList;
+import db.MovieTextFile;
 import uit.Console;
 
 public class BmdbConsoleApp {
-	private static DAO<Movie> movieRepo = new MovieList();
+	private static DAO<Movie> movieRepo = new MovieTextFile();
 
 	public static void main(String[] args) {
 		// welcome and initialization
