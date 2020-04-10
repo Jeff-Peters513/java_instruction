@@ -1,10 +1,7 @@
 package ui;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-
-import business.Movie;
 import business.Pet;
 import uit.Console;
 
@@ -13,29 +10,27 @@ public class PetStoreApp {
 	private static List<Pet> inventory = new ArrayList<>();
 
 	public static void main(String[] args) {
-		// use other code from previous projects and examples like
-		// Bmdb console app and wizard inventory project/app
-
+		// use other code from previous projects and examples
 		// Welcome
 		System.out.println("Welcome to the Pet Store App!\n");
-
+		// display command menu
 		displayMenu();
 
-		// start loop
 		// initialize inventory ArrayList with 2+ pets
-		// (int id, String type, String species, String name, int age)
-//		inventory.add(1, "feline" , "cat", "Dutch", 7);
-//		inventory.add(2, "canine" , "dog", "Finn", 8);
-//		inventory.add(3, "fish" , "goldfish", "wanda", 1);
+		Pet p1 = new Pet(1, "canine", "dog", "Spot", 2);
+		inventory.add(p1);
+		Pet p2 = new Pet(2, "feline", "cat", "Flyod", 8);
+		inventory.add(p2);
+		Pet p3 = new Pet(3, "fish", "goldfish", "Wanda", 1);
+		inventory.add(p3);
 
 		String command = "";
 		// Start loop
 		while (!command.equalsIgnoreCase("exit")) {
-
 			// prompt user
 			command = uit.Console.getString("Command: ", true);
 
-			// business logic
+			// business logic and display results
 			switch (command) {
 			case "list":
 				// list current inventory
@@ -46,7 +41,7 @@ public class PetStoreApp {
 				addPets();
 				break;
 			case "adopt":
-				// adopt - remove pet from inventory remove(object)
+				// adopt - remove pet from inventory
 				adoptPets();
 				break;
 			case "exit":
@@ -62,56 +57,49 @@ public class PetStoreApp {
 
 		// Bye
 		System.out.println("\nBye!");
-		// display results
+
 	}
 
+// Methods used starts here
 	private static void adoptPets() {
 		// drop pet from inventory
-		int itemNumber = uit.Console.getInt("Id of pet to adopt: ", 0, inventory.size()+1);
-		Pet Pet = inventory.remove(itemNumber-1);
-		System.out.println(itemNumber +" was dropped.");
+		System.out.println("\nPet Adoption");
+		System.out.println("------------");
+		int itemNumber = uit.Console.getInt("Id of pet to adopt: ", 0, inventory.size() + 1);
+		inventory.remove(itemNumber - 1);
+		System.out.println(itemNumber + " was adopted.");
+		System.out.println("Hurray another pet found thier forever home!!!");
 	}
 
 	private static void addPets() {
 		// add pet to inventory
-		// (int id, String type, String species, String name, int age)
+		// ref for sanity (int id, String type, String species, String name, int age)
+		System.out.println("\nAdd a pet");
+		System.out.println("-----------");
 		int id = Console.getInt("ID?: ", 0, (int) Double.POSITIVE_INFINITY);
 		String type = Console.getString("Type?: ", true);
 		String species = Console.getString("Species?: ", true);
 		String name = Console.getString("Name?: ", true);
 		int age = Console.getInt("Age?: ", 0, (int) Double.POSITIVE_INFINITY);
-		
-		// add a couple of pets
-		Pet p1 = new Pet();
-		p1.setId(1);
-		p1.setType("canine");
-		p1.setSpecies("dog");
-		p1.setName("Finn");
-		p1.setAge(8);
-		
-		Pet p2 = new Pet();
-		p2.setId(2);
-		p2.setType("fish");
-		p2.setSpecies("goldfish");
-		p2.setName("Wanda");
-		p2.setAge(5);
-		
-		inventory.addAll((Collection<? extends String>) p1);
-		
-		
-		
+		Pet p = new Pet(id, type, species, name, age);
+		if (inventory.add(p)) {
+			System.out.println("Pet successfully added");
+		} else {
+			System.out.println("Issue adding Pet.");
+		}
 
 	}
-	
 
 	private static void listPets() {
 		// list all pets in inventory
-		// get list of all movies
-//				List<Movie> movies = movieRepo.list();
-//				// display to screen
-//				for (Movie m : movies) {
-//					System.out.println(m);
-//				}
+		List<Pet> pets = inventory;
+
+		System.out.println("\nPet Inventory");
+		System.out.println("---------------");
+		for (Pet p : pets) {
+			System.out.println(p);
+		}
+
 	}
 
 	private static void displayMenu() {
