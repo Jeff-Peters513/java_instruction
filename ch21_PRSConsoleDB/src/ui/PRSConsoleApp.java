@@ -48,11 +48,19 @@ public class PRSConsoleApp {
 
 	//TODO 
 	private static void login() {
-		System.out.println("Method not yet implemented.");
-		//String un = Console.getString("Username?: ", true);
-		//String pw = Console.getString("Password?: ", true);
-		//User u = userRepo.
-		//display message		
+			if (userRepo instanceof UserDB) {
+				UserDB ur = (UserDB)userRepo;
+				String un = Console.getString("Username?: ", true);
+				String pw = Console.getString("Password?: ", true);
+				User u = ur.login(un, pw);
+				if (u==null) {
+					System.out.println("Invalid Login.");
+				}
+				else {
+					System.out.println("User found: "+u);
+				}
+			System.out.println(); // line for space
+			}
 	}
 
 	private static void getUser() {
