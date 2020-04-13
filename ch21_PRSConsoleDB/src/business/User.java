@@ -12,11 +12,12 @@ public class User {
 	private boolean admin; // "is" prefix was removed
 	
 	
-	
+	//empty constructor
 	public User() {
 		super();
 	}
 	
+	//fully loaded constructor
 	public User(int id, String userName, String password, String firstName, String lastName, String phoneNumber,
 			String email, boolean reviewer, boolean admin) {
 		super();
@@ -44,6 +45,8 @@ public class User {
 		this.admin = admin;
 	}
 
+	
+	//getters and setters
 	public int getId() {
 		return id;
 	}
@@ -99,6 +102,7 @@ public class User {
 		this.admin = admin;
 	}
 
+	//IDE generated toString()
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", firstName=" + firstName

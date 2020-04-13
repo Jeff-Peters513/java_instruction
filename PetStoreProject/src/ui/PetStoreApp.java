@@ -5,6 +5,7 @@ import java.util.List;
 import business.Pet;
 import uit.Console;
 
+
 public class PetStoreApp {
 	// initialize an arrayList
 	private static List<Pet> inventory = new ArrayList<>();
@@ -28,7 +29,7 @@ public class PetStoreApp {
 		// Start loop
 		while (!command.equalsIgnoreCase("exit")) {
 			// prompt user
-			command = uit.Console.getString("Command: ", true);
+			command = Console.getString("Command: ", true);
 
 			// business logic and display results
 			switch (command) {
@@ -68,8 +69,26 @@ public class PetStoreApp {
 		int itemNumber = uit.Console.getInt("Id of pet to adopt: ", 0, inventory.size() + 1);
 		inventory.remove(itemNumber - 1);
 		System.out.println(itemNumber + " was adopted.");
-		System.out.println("Hurray another pet found thier forever home!!!");
+		System.out.println("Hurray another pet found their forever home!!!");
 	}
+//		Pet petId = null;
+//		while (petId == null) {
+//			int id = Console.getInt("Pet id?: ", 0, (int) Double.POSITIVE_INFINITY);
+//			int petIdx = id - 1;
+//			petId = inventory.get(petIdx);
+//			if (petId == null) {
+//				System.out.println("no pet found for entered id: " + petId + ".");
+//			}
+//
+//			if (inventory.remove(petIdx) != null) {
+//				System.out.println("Pet " + petId + " was adpoted and removed from inventory.");
+//				System.out.println("Hurray another pet found their forever home!!!");
+//			} else {
+//				System.out.println("Error deleting user.");
+//			}
+//			System.out.println();
+//		}
+//	}
 
 	private static void addPets() {
 		// add pet to inventory
