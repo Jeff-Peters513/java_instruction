@@ -38,8 +38,11 @@ public class ContactManagerApp {
 		contactNames.stream().forEach(str -> System.out.println(str));
 
 		System.out.println("Transform contact list to list of names:");
-		// contactNames = contacts.collect(Collectors.toList());
-		contactNames.stream().forEach(str -> System.out.println(str));
+		List<String> contactNames2 = contacts.stream()
+				.map(Contact::getName)
+		        .collect(Collectors.toList());
+		contactNames2.stream().forEach(System.out::println);
+		
 		
 		// p 721
 		System.out.println("reduce a list of contacts to a single string");
