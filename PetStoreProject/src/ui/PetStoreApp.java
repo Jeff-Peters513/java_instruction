@@ -5,7 +5,6 @@ import java.util.List;
 import business.Pet;
 import uit.Console;
 
-
 public class PetStoreApp {
 	// initialize an arrayList
 	private static List<Pet> inventory = new ArrayList<>();
@@ -66,40 +65,35 @@ public class PetStoreApp {
 		// drop pet from inventory
 		System.out.println("\nPet Adoption");
 		System.out.println("------------");
-		int itemNumber = uit.Console.getInt("Id of pet to adopt: ", 0, inventory.size() + 1);
-		inventory.remove(itemNumber - 1);
-		System.out.println(itemNumber + " was adopted.");
-		System.out.println("Hurray another pet found their forever home!!!");
+		int itemNumber = Console.getInt("Id of pet to adopt: ", 0, inventory.size());
+
+		// find pet whose ID matched the one entered
+		Pet p = null;
+		for (Pet foundPet : inventory) {
+			if (foundPet.getId() == itemNumber) {
+				p = foundPet;
+			}
+			if (p != null) {
+				inventory.remove(p);
+				System.out.println("Pet adopted: " + p);
+				System.out.println();
+
+			} else {
+				System.out.println("No pet found for id: " + itemNumber);
+			}
+		}
 	}
-//		Pet petId = null;
-//		while (petId == null) {
-//			int id = Console.getInt("Pet id?: ", 0, (int) Double.POSITIVE_INFINITY);
-//			int petIdx = id - 1;
-//			petId = inventory.get(petIdx);
-//			if (petId == null) {
-//				System.out.println("no pet found for entered id: " + petId + ".");
-//			}
-//
-//			if (inventory.remove(petIdx) != null) {
-//				System.out.println("Pet " + petId + " was adpoted and removed from inventory.");
-//				System.out.println("Hurray another pet found their forever home!!!");
-//			} else {
-//				System.out.println("Error deleting user.");
-//			}
-//			System.out.println();
-//		}
-//	}
 
 	private static void addPets() {
 		// add pet to inventory
 		// ref for sanity (int id, String type, String species, String name, int age)
 		System.out.println("\nAdd a pet");
 		System.out.println("-----------");
-		int id = Console.getInt("ID?: ", 0, (int) Double.POSITIVE_INFINITY);
+		int id = Console.getInt("ID?: ", 0, Integer.MAX_VALUE);
 		String type = Console.getString("Type?: ", true);
 		String species = Console.getString("Species?: ", true);
 		String name = Console.getString("Name?: ", true);
-		int age = Console.getInt("Age?: ", 0, (int) Double.POSITIVE_INFINITY);
+		int age = Console.getInt("Age?: ", 0, Integer.MAX_VALUE);
 		Pet p = new Pet(id, type, species, name, age);
 		if (inventory.add(p)) {
 			System.out.println("Pet successfully added");
