@@ -66,22 +66,21 @@ public class PetStoreApp {
 		System.out.println("\nPet Adoption");
 		System.out.println("------------");
 		int itemNumber = Console.getInt("Id of pet to adopt: ", 0, inventory.size());
-
+		// System.out.println(inventory.size());
+		
 		// find pet whose ID matched the one entered
 		Pet p = null;
 		for (Pet foundPet : inventory) {
 			if (foundPet.getId() == itemNumber) {
 				p = foundPet;
-			}
-			if (p != null) {
-				inventory.remove(p);
-				System.out.println("Pet adopted: " + p);
-				System.out.println();
 
-			} else {
-				System.out.println("No pet found for id: " + itemNumber);
+			//} else {
+			//	System.out.println("No pet found for id: " + p);
 			}
 		}
+		inventory.remove(p);
+		System.out.println("Pet adopted: " + p);
+		System.out.println();
 	}
 
 	private static void addPets() {

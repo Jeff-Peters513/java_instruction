@@ -36,8 +36,13 @@ public class ContactManagerApp {
 		List<String> contactNames = contacts.stream().map(c -> c.getName())
 				.collect(Collectors.toList());
 		contactNames.stream().forEach(str -> System.out.println(str));
+		// is eqivalent to...
+//		for (String str: contactNames) {
+//			System.out.println(str);
+//		}
+		
 
-		System.out.println("Transform contact list to list of names:");
+		System.out.println("Transform contact list to list of names - double ::");
 		List<String> contactNames2 = contacts.stream()
 				.map(Contact::getName)
 		        .collect(Collectors.toList());
