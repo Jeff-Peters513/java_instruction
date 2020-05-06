@@ -2,6 +2,7 @@ package ui;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class CollectionsApp {
 
@@ -20,7 +21,7 @@ public class CollectionsApp {
 
 		// array list is in the collection class
 		// array list a generic
-		ArrayList<Integer> numbersList = new ArrayList<>();
+		List<Integer> numbersList = new ArrayList<>();
 		numbersList.add(5);
 		numbersList.add(7);
 		numbersList.add(15);
@@ -33,7 +34,7 @@ public class CollectionsApp {
 
 		}
 		System.out.println(numbersList);
-		System.out.println("The Size of ArrayList is: " + big);
+		System.out.println("The Size of List is: " + big);
 		System.out.println("===================================");
 		ArrayList<String> names = new ArrayList<>();
 		names.add("Sean");
