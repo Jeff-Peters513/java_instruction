@@ -10,14 +10,20 @@ public class ShortCircuitApp {
 		String light = sc.next();
 		System.out.println("How far away is light (feet)? ");
 		int feet = sc.nextInt();
-		System.out.println("How fast are you going (mph)?  ");
+		//System.out.println("How fast are you going (mph)?  ");
+		//int mph = sc.nextInt();
 		
 		if (light.equalsIgnoreCase("r")) {
 			// Light is red - stop
+			System.out.println("Stop! ");
 		}
-		else if (light.equalsIgnoreCase("y") && feet < 30)
-			
-	
+		else if (light.equalsIgnoreCase("y") && feet < 30) {
+			System.out.println("Slow down to stop. ");
+		}
+		else {
+			System.out.println("proceed safely. ");
+		}
+		
 	}
 
 }
