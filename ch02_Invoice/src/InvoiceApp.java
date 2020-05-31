@@ -41,5 +41,6 @@ public class InvoiceApp {
             choice = sc.next();
             System.out.println();
         }
+        System.out.println("Bye");
     }
 }

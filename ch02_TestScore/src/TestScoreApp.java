@@ -5,7 +5,7 @@ public class TestScoreApp {
     public static void main(String[] args) {
         // display operational messages
         System.out.println("Enter test scores that range from 0 to 100.");
-        System.out.println("To end the program, enter 999.");
+        System.out.println("To end the program, enter 1000.");
         System.out.println();  // print a blank line
 
         // initialize variables and create a Scanner object

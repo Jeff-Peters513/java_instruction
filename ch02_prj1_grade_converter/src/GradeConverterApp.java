@@ -32,6 +32,7 @@ public class GradeConverterApp {
 			}			
 			// display out put
 			System.out.println("Letter Grade: " +letterGrade);
+			System.out.println("");
 			System.out.println("Continue? ");
 			choice = sc.next();
 		}

@@ -1,3 +1,4 @@
+//this was created by fellow classmate and shared with the entire class
 //v4.6 -- changed closing message
 import java.math.BigDecimal;
 import java.math.RoundingMode;
