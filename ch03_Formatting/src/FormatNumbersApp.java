@@ -16,7 +16,7 @@ public class FormatNumbersApp {
 		NumberFormat pf = NumberFormat.getPercentInstance();
 		pf.setMaximumFractionDigits(2);
 		System.out.println("Interest rate is: "+ interestRate);
-		System.out.println("formatted interest rate is: "+ 
+		System.out.println("Formatted interest rate is: "+ 
 				pf.format(interestRate));
 		
 		

@@ -6,6 +6,7 @@ public class TravelTimeCalculator {
 		Scanner sc = new Scanner(System.in);
 		//1. Welcome message
 		System.out.println("Welcome to the Travel Time Calculator");
+		System.out.println("");
 		
 		//--Start loop
 		String choice = "y";
@@ -25,6 +26,7 @@ public class TravelTimeCalculator {
 			int remainingMinutes = (int)(minutesTraveled%60);
 					
 			//4. display output	
+			System.out.println("");
 			System.out.println("Estimated travel time");
 			System.out.println("----------------------");
 			System.out.println();
@@ -32,6 +34,7 @@ public class TravelTimeCalculator {
 			System.out.println("Minutes: "+ remainingMinutes);
 			System.out.println();			
 			System.out.print("Continue? (y/n)");
+			System.out.println("");
 			choice = sc.next();
 			
 		}

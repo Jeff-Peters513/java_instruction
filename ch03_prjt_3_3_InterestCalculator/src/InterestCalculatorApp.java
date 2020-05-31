@@ -24,13 +24,9 @@ public class InterestCalculatorApp {
 						
 			BigDecimal loanAmount = new BigDecimal(loanAmountString)
 				.setScale(2, RoundingMode.HALF_UP);
-			BigDecimal inputRate = new BigDecimal(inputRateString);
+			BigDecimal inputRate = new BigDecimal(inputRateString/100);
 			
-			// BigDecimal interestAmount = new BigDecimal(0);
-						
-			//= new BigDecimal("")
-			//		.setScale(2, RoundingMode.HALF_UP);
-							
+									
 			//3. business logic: compute interestAmount
 			BigDecimal interestAmount = loanAmount.multiply(inputRate);
 			// display and format results
@@ -49,10 +45,9 @@ public class InterestCalculatorApp {
 			// round to two decimal places
 			NumberFormat number = NumberFormat.getInstance();
 			number.setMaximumFractionDigits(2);
-			// String roundedTempC = number.format(tempC);
+		
 			
 			//4. display output	
-			// System.out.println("Degrees in Celsius " + roundedTempC );
 			System.out.println();			
 			System.out.print("Continue? (y/n)");
 			System.out.println();

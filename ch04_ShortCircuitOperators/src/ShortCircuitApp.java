@@ -10,8 +10,7 @@ public class ShortCircuitApp {
 		String light = sc.next();
 		System.out.println("How far away is light (feet)? ");
 		int feet = sc.nextInt();
-		//System.out.println("How fast are you going (mph)?  ");
-		//int mph = sc.nextInt();
+		
 		
 		if (light.equalsIgnoreCase("r")) {
 			// Light is red - stop

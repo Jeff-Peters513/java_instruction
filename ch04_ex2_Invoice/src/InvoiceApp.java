@@ -7,6 +7,8 @@ public class InvoiceApp {
         @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
         String choice = "y";
+        System.out.println("The Invoice Total Calculator");
+        System.out.println("");
 
         while (!choice.equalsIgnoreCase("n")) {
             // get the input from the user
@@ -46,39 +48,7 @@ public class InvoiceApp {
                    
            }
        
-        // double discountPercent = 0.0;
-        /*  switch(customerType) {
-              case "r":
-              case "R":
-                  if (subtotal < 100) {
-                      discountPercent = 0.0;
-                  } else if (subtotal >= 250 && subtotal < 500) {
-                      discountPercent = .25;
-                  } else if (subtotal >= 500) {
-                      discountPercent = .3;
-                  }
-                  break;
-              case "c":
-              case "C":
-                  if (subtotal < 250) {
-                      discountPercent = .2;
-                  } else if (subtotal >= 250) {
-                      discountPercent = .2;
-                  }
-                  break;
-              case "t":
-              case "T":
-                  if (subtotal < 500) {
-                      discountPercent = .4;
-                  } else if (subtotal >= 500) {
-                      discountPercent = .5;
-                  }
-                  break;
-              default:
-                  discountPercent = .0;
-                  break;
-        }
- */
+        
             // calculate the discount amount and round to 2 decimals
             double discountAmount = subtotal * discountPercent;
             discountAmount = Math.ceil(discountAmount * 100) / 100;
@@ -90,7 +60,9 @@ public class InvoiceApp {
             NumberFormat currency = NumberFormat.getCurrencyInstance();
             NumberFormat percent = NumberFormat.getPercentInstance();
             System.out.println(
-                "Discount percent: " + percent.format(discountPercent) + "\n"
+             "\n"+"Invoice" + "\n"
+              + "Subtotal:         " + currency.format(subtotal) + "\n" 
+              + "Discount percent: " + percent.format(discountPercent) + "\n"
               + "Discount amount:  " + currency.format(discountAmount) + "\n"
               + "Total:            " + currency.format(total) + "\n");
 
