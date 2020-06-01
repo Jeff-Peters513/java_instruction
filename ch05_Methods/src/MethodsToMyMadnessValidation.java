@@ -1,4 +1,4 @@
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 public class MethodsToMyMadnessValidation {
@@ -12,11 +12,7 @@ public class MethodsToMyMadnessValidation {
 		printWelcomeMessage();
 		printWelcomeMessage(name);
 		printWelcomeMessage("Steven");
-		/*
-		 * System.out.println("Enter 2 integers (ex. 1 5): "); int a = sc.nextInt(); int
-		 * b = sc.nextInt();
-		 */
-
+		
 		// get int a
 		int a = getValidInt("Enter Number 1: ", sc);
 		// get in b
