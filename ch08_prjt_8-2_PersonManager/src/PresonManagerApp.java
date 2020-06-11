@@ -4,7 +4,7 @@ public class PresonManagerApp {
 	public static void main(String[] args) {
 		// welcome
 		System.out.println("Welcome to the Person Manager App!");
-		
+		System.out.println();
 		// -- continue prompt start
 		String choice = "y";
 		while (choice.equalsIgnoreCase("y")) {
@@ -35,7 +35,7 @@ public class PresonManagerApp {
 			System.out.println();
 			
 			
-		choice = Console.getString("Contiue? (y/n): ", "y", "n");
+		choice = Console.getString("Continue? (y/n): ", "y", "n");
 		//-- continue prompt end
 		System.out.println();
 		}
