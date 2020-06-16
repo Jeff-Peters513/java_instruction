@@ -1,6 +1,6 @@
 package ui;
 
-import uit.Console;
+import util.Console;
 
 public class LibraryDemoApp {
 

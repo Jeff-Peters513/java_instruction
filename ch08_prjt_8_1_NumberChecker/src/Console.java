@@ -1,8 +1,11 @@
 import java.util.Scanner;
 
 public class Console {
+	private Scanner sc;
     
-    private Scanner sc = new Scanner(System.in);
+    public Console () {
+    	sc = new Scanner(System.in);
+    }
 
     public String getString(String prompt) {
         System.out.print(prompt);

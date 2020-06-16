@@ -16,7 +16,7 @@ public class BattingStatisticsApp {
 		// String[][] table = new String[30][2];
 
 		// welcome
-		System.out.println("Welcome to the Batting Average Calculator");
+		System.out.println("Welcome to the Batting Average Calculator\n");
 
 		// to perform 1 or more calculations - while loop needed
 		String choice = "y";
@@ -25,11 +25,11 @@ public class BattingStatisticsApp {
 			atBat = Console.getInt("Enter number of times at bat: ", 0, 31);
 			// post a header for base achieved during that atBat
 			System.out.println();
-			String header = "0=out" + "1=single" + "2=double" + "3=triple" + "4=home run";
-			System.out.print(header);
+			String header = "0=out " + "1=single " + "2=double " + "3=triple " + "4=home run";
+			System.out.println(header);
 			int[] results = new int[atBat];
 			for (int i = 0; i < atBat; i++) {
-				int result = Console.getInt("Results for at-bat: ", 0, 4);
+				int result = Console.getInt("Results for at-bat: ", -1, 5);
 				// format the values and store them in the array
 				results[i] = result;
 			}
@@ -47,10 +47,12 @@ public class BattingStatisticsApp {
 
 			// display results
 			NumberFormat nf = NumberFormat.getNumberInstance();
+			//nf.setMaximumIntegerDigits(3);
 			nf.setMaximumIntegerDigits(3);
-			nf.setMaximumIntegerDigits(3);
+			System.out.println();
 			System.out.println("Batting Average: " + nf.format(battingAvg));
-			System.out.println("Slugging percent: " + nf.format(sluggingPct));
+			System.out.println("Slugging percent: " + nf.format(sluggingPct)+ "%");
+			System.out.println();
 
 			// see if the user wants to continue
 			choice = Console.getString("Another player? (y/n): ");
