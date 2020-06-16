@@ -1,17 +1,24 @@
 
 public class MyConsole extends Console {
-	
+
+	// constructor for MyConsole and calls in methods from Console as well
+	public MyConsole() {
+		super();
+	}
+
 	@Override
-    public boolean equals(Object object) {
-    	if (object instanceof Product) {
-    		Product product2 = (Product) object;
-    		if (code.equals(product2.getCode()) &&
-    			description.equals(product2.getDescription()) &&
-    			price == product2.getPrice())
-				{return true;
-				}
-    	}
-		return false;
-    }
+	public String getString(String prompt) {
+		String s = "";
+		boolean isValid = false;
+		while (isValid == false) {
+			s = super.getString(prompt);
+			if (s.equals(" ")) {
+				System.out.println("Error! This entry is required. Try again.");
+			} else {
+				isValid = true;
+			}
+		}
+		return s;
+	}
 
 }
