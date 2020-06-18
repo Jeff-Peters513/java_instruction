@@ -1,12 +1,25 @@
 package ui;
 
-import util.Console;
+import uit.Console;
 
 public class LibraryDemoApp {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String name = Console.getString("Enter");
+		String name = Console.getString("Enter your name:  ");
+		int nbr = Console.getInt("Enter a number:   ");
+		
+		System.out.println(name);
+		System.out.println(nbr);
+
+		/*
+		 * Multiple line comment
+		 * 
+		 */
+
+		/**
+		 * This is JavaDoc
+		 */
+
 	}
 
 }
