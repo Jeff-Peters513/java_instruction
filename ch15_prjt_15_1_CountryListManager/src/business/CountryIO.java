@@ -1,6 +1,6 @@
 package business;
 
-public class CounrtyIO {
+public class CountryIO {
 
 	private String Country;
 	

@@ -2,14 +2,14 @@ package ui;
 
 import java.util.List;
 
-import business.CounrtyIO;
+import business.CountryIO;
 import business.DAO;
 import util.Console;
 
 public class CountryListManagerApp {
 
 	 // declare class variables
-    private static DAO<CounrtyIO> countryDAO = null;
+    private static DAO<CountryIO> countryDAO = null;
 
     public static void main(String[] args) {
         // display a welcome message
@@ -47,7 +47,7 @@ public class CountryListManagerApp {
     public static void displayMenu() {
         System.out.println("COMMAND MENU");
         System.out.println("list    - List countries");
-        System.out.println("add     - Add a counrty");
+        System.out.println("add     - Add a country");
         //System.out.println("del     - Delete a customer");
         //System.out.println("help    - Show this menu");
         System.out.println("exit"); //    - Exit this application\n");
@@ -70,7 +70,7 @@ public class CountryListManagerApp {
     }
 
     public static void addCustomer() {
-        String firstName = Console.getLine("Enter first name: ");
+        String firstName = Console.getString("Enter first name: ");
         String lastName = Console.getString("Enter last name: ");
         String email = Console.getString("Enter customer email: ");
 

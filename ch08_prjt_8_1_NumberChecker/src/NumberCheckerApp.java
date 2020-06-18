@@ -7,7 +7,7 @@ public class NumberCheckerApp {
 		System.out.println("");
 		
 		// create instance of MyConsole
-		MyConsole console = new MyConsole();
+		Console console = new Console();
 
 		// biz logic; while loop
 		String choice = "y";

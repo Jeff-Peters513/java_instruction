@@ -2,8 +2,6 @@ package ui;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
 
 import util.Console;
 
@@ -11,15 +9,16 @@ public class WizardInventoryApp {
 	// initialize an arrayList
 	private static List<String> inventory = new ArrayList<>();
 
+
 	public static void main(String[] args) {
 		// welcome
 		System.out.println("The Wizard Inventory Game!\n");
-		
-		//add the first 3 items into inventory
+
+		// add the first 3 items into inventory
 		inventory.add("wooden shoes");
 		inventory.add("wizard hat");
 		inventory.add("cloth shoes");
-		
+
 		String command = "";
 		// Start loop
 		while (!command.equalsIgnoreCase("exit")) {
@@ -63,19 +62,19 @@ public class WizardInventoryApp {
 	} // end static main
 
 	private static void dropItem() {
-		//delete item from inventory
-		int itemNumber = uit.Console.getInt("Number: ", 0, inventory.size()+1);
-		String droppedItem = inventory.remove(itemNumber-1);
-		System.out.println( droppedItem +" was dropped.");
+		// delete item from inventory
+		int itemNumber = util.Console.getInt("Number: ", 0, inventory.size() + 1);
+		String droppedItem = inventory.remove(itemNumber - 1);
+		System.out.println(droppedItem + " was dropped.");
 	}
 
 	private static void editItem() {
 		// edit / update/ change name of item
-		int itemNumber = uit.Console.getInt("Number: ", 0, inventory.size()+1);
+		int itemNumber = util.Console.getInt("Number: ", 0, inventory.size() + 1);
 		String updatedName = Console.getString("Updated Name: ", true);
-		inventory.remove(itemNumber-1);
-		inventory.add(itemNumber-1, updatedName);
-		System.out.println("Item number "+itemNumber+" was updated.");
+		inventory.remove(itemNumber - 1);
+		inventory.add(itemNumber - 1, updatedName);
+		System.out.println("Item number " + itemNumber + " was updated.");
 	}
 
 	private static void addItem() {
@@ -83,11 +82,10 @@ public class WizardInventoryApp {
 		// max inventory is 4 items
 		if (inventory.size() >= 4) {
 			System.out.println("Cannot gran an item. Max limit (4) reached.");
-		}
-		else {
+		} else {
 			String itemName = Console.getString("Name: ", true);
 			inventory.add(itemName);
-			System.out.println(itemName+" was added.");			
+			System.out.println(itemName + " was added.");
 		}
 	}
 
