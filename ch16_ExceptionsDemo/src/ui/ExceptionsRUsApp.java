@@ -11,11 +11,12 @@ public class ExceptionsRUsApp {
 
 		try {
 			double d = ConsoleUtil.getDouble("Enter a double: ");
+			System.out.println(d +" was entered.");
 		} catch (InputMismatchException ime) {
-			System.out.println("Error gettomg yearly interest rate.");
+			System.out.println("Error getting yearly interest rate.");
 
 		}
-
+	
 		System.out.println("bye");
 
 	}

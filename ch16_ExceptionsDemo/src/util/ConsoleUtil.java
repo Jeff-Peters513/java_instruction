@@ -7,8 +7,8 @@ public class ConsoleUtil {
 
 	private static Scanner sc = new Scanner(System.in);
 
-	public static void getDouble(String prompt) {
-		double d = 0.0;
+	public static double getDouble(String prompt) {
+		double d = 0.00;
 
 		try {
 			System.out.println(prompt);
@@ -18,7 +18,7 @@ public class ConsoleUtil {
 			throw ime;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return d;
 		}
+		return d;
 	}
 }
