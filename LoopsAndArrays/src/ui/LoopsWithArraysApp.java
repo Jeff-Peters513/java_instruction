@@ -1,18 +1,17 @@
 package ui;
 
+import java.util.ArrayList;
+import java.util.List;
+import business.Petz;
+import uit.Console;
+
 public class LoopsWithArraysApp {
 		
-	import java.util.ArrayList;
-	import java.util.List;
-	import business.Petz;
-	import uit.Console;
+	// initialize an arrayList
 	private static List<Petz> inventory = new ArrayList<>();
 
 	public static void main(String[] args) {
-		
-				// initialize an arrayList
-
-			public static void main(String[] args) {
+			
 				// use other code from previous projects and examples
 				// Welcome
 				System.out.println("Welcome to the Pet Store App!\n");
@@ -63,8 +62,6 @@ public class LoopsWithArraysApp {
 
 			}
 	
-		}
-	}
 		// Methods used starts here
 			private static void adoptPets() {
 				// drop pet from inventory
