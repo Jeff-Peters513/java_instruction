@@ -44,11 +44,11 @@ public class ArrowHeadApp {
 
 		System.out.println();
 		for (int i = 1; i <= center; i++) {
-			displayLine(i);
+			displayLineInc(i);
 		}
 
 		for (double idx = (nbrLines - center - 1); idx >= 0; idx--) {
-			displayLineDe(idx);
+			displayLineDec(idx);
 		}
 
 		// bye
@@ -58,19 +58,22 @@ public class ArrowHeadApp {
 	}
 
 	// methods to display results
-	private static void displayLineDe(double idx) {
-		String display = "";
-		for (double i = idx; i >= 0; i--) {
-			display += ">";
-		}
-		System.out.println(display);
-	}
-
-	private static void displayLine(int i) {
+	private static void displayLineInc(int i) {
 		String display = "";
 		for (int idx = 1; idx <= i; idx++) {
 			display += ">";
 		}
 		System.out.println(display);
 	}
+	
+	private static void displayLineDec(double idx) {
+		String display = "";
+		for (double i = idx; i >= 0; i--) {
+			display += ">";
+		}
+		System.out.println(display);
+	}
+	
+	
+	
 }
