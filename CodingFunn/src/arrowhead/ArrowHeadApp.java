@@ -16,38 +16,61 @@ public class ArrowHeadApp {
 //		&gt;
 //		Note: if the user enters an even # you’ll need to add a row to accommodate the middle row, the tip of
 //		the arrowhead.
-	//Welcome
+
+		// Welcome
 		System.out.println("Welcome to the ArrowHead App!");
-		
+
 		Scanner sc = new Scanner(System.in);
-		
-		//prompt user
-		System.out.print("What size arrowhead would you like to see?: " );
-		int nbrArrows = sc.nextInt();
-		
+
+		// prompt user
+		System.out.print("What size arrowhead would you like to see?: ");
+		double nbrArrows = sc.nextDouble();
+
 		// business logic
-		//if odd number then print out number of lines = odd number
-		//if even then add one line for the center per instructions
-			
-		if (nbrArrows%2==0) {
-			System.out.println("even "+(nbrArrows%2));
-		}else if (!(nbrArrows%2==0)) {
-			System.out.println("odd " +((nbrArrows%2==0)));
+		// if odd number then print out number of lines = odd number
+		// if even then add one line for the center per instructions
+
+		double nbrLines = (nbrArrows % 2 == 0) ? nbrArrows + 1 : nbrArrows;
+		double center = (nbrLines / 2) + 0.5;
+
+		// display
+		
+		// following println's are for debugging
+		// System.out.println(nbrLines);
+		// System.out.println(center);
+
+		// increase number of > per line until center line then decrease the number of >
+		// until nbrArrows entered
+
+		System.out.println();
+		for (int i = 1; i <= center; i++) {
+			displayLine(i);
 		}
-		
-		//display
-		
-		
-		//bye
-		System.out.println("Bye!");
-		
-		
-		
-		
-		
-		
-	
-	
+
+		for (double idx = (nbrLines - center - 1); idx >= 0; idx--) {
+			displayLineDe(idx);
+		}
+
+		// bye
+		sc.close();
+		System.out.println("\n Bye!");
+
 	}
 
+	// methods to display results
+	private static void displayLineDe(double idx) {
+		String display = "";
+		for (double i = idx; i >= 0; i--) {
+			display += ">";
+		}
+		System.out.println(display);
+	}
+
+	private static void displayLine(int i) {
+		String display = "";
+		for (int idx = 1; idx <= i; idx++) {
+			display += ">";
+		}
+		System.out.println(display);
+	}
 }
