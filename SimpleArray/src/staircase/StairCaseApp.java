@@ -14,24 +14,18 @@ public class StairCaseApp {
 
 	static void staircase(int n) {
 		// right justified staircase using spacing and #
-//		String stair = "";
-//		String sp = "";
-//		String op = "";
-		for (int k = 0; k <= n; k++) {
-			String stair = "";
-			String sp = "";
-			String op = "";
-			
-			for (int i = 2; i <= k; i++) {
-				sp += "_";
+		// spaces first then add "#" stairs
+
+		for (int k = 1; k <= n; k++) {
+
+			for (int i = 1; i <= n - k; i++) {
+				System.out.print(" ");
 			}
-			for (int j = k; j <= k; j++) {
-				stair += "#";
+			for (int i = 1; i <= k; i++) {
+				System.out.print("#");
 			}
-			op = sp + stair;
-			System.out.println(op);
+			System.out.println();
 		}
-		// build a single string spaces first then add #stairs
 
 	}
 
