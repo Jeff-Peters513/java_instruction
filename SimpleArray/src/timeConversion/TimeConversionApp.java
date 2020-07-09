@@ -24,15 +24,27 @@ public class TimeConversionApp {
 		String[] timeParts = s.split(":");
 		String hour = timeParts[0];
 		String minute = timeParts[1];
-		String secondXm = timeParts[2];
+		String secondXm = s.substring(6, 8);
 		String secXmSplit = s.substring(8); 
 		
 		//process to convert if need be
 		
 		//prepare result to send back in 24 hour format
+		System.out.println();
+		System.out.println(hour);
+		System.out.println(minute);
+		System.out.println(secondXm);
+		System.out.println(secXmSplit);
+		System.out.println();
 		
+		//int adjHour = hour + 12;
+		//System.out.println(adjHour);
 		
-		String result = hour + minute + secondXm;
+		String tri = " ";
+		tri = secXmSplit.equalsIgnoreCase("pm") ? "12" : "no";
+		System.out.println(tri);
+		
+		String result = hour +":"+ minute +":"+ secondXm;
 		
 		return result;
 	}
