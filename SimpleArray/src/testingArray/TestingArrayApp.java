@@ -1,4 +1,4 @@
-package ui;
+package testingArray;
 
 public class TestingArrayApp {
 
