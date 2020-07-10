@@ -6,9 +6,9 @@ public class TimeConversionApp {
 	public static void main(String[] args) {
 		// this app converts 12 hour time to 24 hour time
 		
-		String s = "12:05:45AM";
+		//String s = "12:00:01AM";
 		//String s = "04:05:45AM";		
-		//String s = "12:01:45PM";
+		String s = "12:01:45PM";
 		//String s = "01:05:45PM";
 		//String s = "07:05:45PM";
 		System.out.println(s);
