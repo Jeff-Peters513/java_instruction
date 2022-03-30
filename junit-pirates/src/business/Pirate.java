@@ -55,7 +55,7 @@ public class Pirate {
 	//Method to determine if the pirate is dead.
 	//if limbs remaining is negative pirate is dead
 	public boolean isDead() {
-		return (limbsRemaining < 0);
+		return (limbsRemaining <= 0);
 	}
 
 	public void loseALimb() {

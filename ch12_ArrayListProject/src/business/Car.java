@@ -12,7 +12,7 @@ public class Car {
 		this.make = make;
 		this.model = model;
 	}
-
+ 
 	// generate getters and setters
 	public int getId() {
 		return id;

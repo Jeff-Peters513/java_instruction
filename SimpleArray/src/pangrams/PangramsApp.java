@@ -8,6 +8,7 @@ public class PangramsApp {
 	public static void main(String[] args) {
 		// first case is a pangram
 		String s = "We promptly judged antique ivory buckles for the next prize";
+		//String s = "A quick brown fox jumps over the lazy dog ";
 		// second case is not pangram
 		//String s = "We promptly judged antique ivory buckles for the prize";
 		//third case the alphabet is pangram

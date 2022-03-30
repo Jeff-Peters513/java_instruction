@@ -1,1 +1,2 @@
 java	Murach's Java Programming	57.50
+java	jeffgg's Java Programming	90.99

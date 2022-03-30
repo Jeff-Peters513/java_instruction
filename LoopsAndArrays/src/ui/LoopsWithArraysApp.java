@@ -61,7 +61,7 @@ public class LoopsWithArraysApp {
 				System.out.println("\nBye!");
 
 			}
-	
+	 
 		// Methods used starts here
 			private static void adoptPets() {
 				// drop pet from inventory

@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class InvoiceApp {
 
     public static void main(String[] args) {
-        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
         String choice = "y";
         System.out.println("The Invoice Total Calculator");
@@ -16,7 +15,7 @@ public class InvoiceApp {
             String customerType = sc.next();
             System.out.print("Enter subtotal:   ");
             double subtotal = sc.nextDouble();
-
+ 
             // get the discount percent
             // The if/else statement replacement of switch statement
             double discountPercent = 0.0;
@@ -72,6 +71,7 @@ public class InvoiceApp {
             System.out.println();
             
         }
+        sc.close();
         System.out.println("Bye");
     }
 }

@@ -51,6 +51,8 @@ public class FilesApp {
 		
 		//write data to the stream
 		out.println("java\tMurach's Java Programming\t57.50");
+		out.println("java\tjeffgg's Java Programming\t90.99");
+		
 		
 		// close the output stream and free system resources
 		out.close();
@@ -63,7 +65,11 @@ public class FilesApp {
 		
 		System.out.println("read data from the file..");
 		String line = in.readLine();
-		System.out.println(line);
+		while (line != null) {
+			System.out.println(line);
+			line = in.readLine();		
+		}
+		
 		
 		//close input stream
 		in.close();
